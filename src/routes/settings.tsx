@@ -3,9 +3,9 @@ import { useState } from "react";
 export function Settings() {
   const [settingsType, setSettingsType] = useState<string>("primary");
   return (
-    <div className="w-full px-12">
+    <div className="w-full px-4 md:px-12 mt-8 h-[90vh]">
       <motion.h1
-        className="text-3xl font-medium text-gray-700"
+        className="text-3xl font-medium text-gray-700 mb-6"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -51,7 +51,7 @@ export function Settings() {
           Basic Information:
         </motion.p>
 
-        <form className="grid space-y-7 w-96 mt-4">
+        <form className="grid space-y-7 w-72 lg:w-96 mt-4">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

@@ -2,7 +2,7 @@ import { BellRing, User } from "lucide-react";
 import { motion } from "framer-motion";
 export function Header() {
   return (
-    <header className="flex flex-row justify-end items-start pt-16 w-full px-12">
+    <header className="flex flex-row justify-center md:justify-end items-start pt-16 w-full h-[10vh] px-12">
       <motion.div
         className="flex items-center justify-center gap-8"
         initial={{ y: -50, opacity: 0 }}

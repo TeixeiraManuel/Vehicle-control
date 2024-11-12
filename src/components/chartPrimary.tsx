@@ -35,10 +35,10 @@ const chartConfig = {
 } satisfies ChartConfig;
 export function ChartPrimary() {
   return (
-    <Card className="lg:w-9/12 h-[22rem]">
+    <Card className="lg:w-9/12 h-[28rem]">
       <ChartContainer config={chartConfig}>
         <CardContent className="p-6">
-          <div className="h-80 w-full">
+          <div className="h-96 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart accessibilityLayer data={chartData}>
                 <CartesianGrid vertical={false} />

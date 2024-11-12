@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import { Label, Pie, PieChart, Sector } from "recharts";
 import { PieSectorDataItem } from "recharts/types/polar/Pie";
@@ -19,9 +17,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+
 const desktopData = [
   { state: "active", desktop: 186, fill: "hsl(var(--chart-1))" },
-
   { state: "inactive", desktop: 173, fill: "hsl(var(--chart-2))" },
 ];
 
@@ -56,15 +54,18 @@ export function ChartSecondary() {
   const months = React.useMemo(() => desktopData.map((item) => item.state), []);
 
   return (
-    <Card data-chart={id} className="flex flex-col lg:w-2/6">
+    <Card
+      data-chart={id}
+      className="flex w-full flex-col sm:w-full md:w-full lg:w-2/6"
+    >
       <ChartStyle id={id} config={chartConfig} />
-      <CardHeader className="flex-row items-start space-y-0 pb-0">
-        <div className="grid gap-12">
+      <CardHeader className="flex flex-col sm:flex-row items-start space-y-2 sm:space-y-0 pb-0">
+        <div className="grid gap-4 sm:gap-12">
           <CardDescription>January - June 2024</CardDescription>
         </div>
         <Select value={activeMonth} onValueChange={setActiveMonth}>
           <SelectTrigger
-            className="ml-auto h-7 w-[130px] rounded-lg pl-2.5"
+            className="w-full sm:w-[130px] h-7 rounded-lg pl-2.5 sm:ml-auto"
             aria-label="Select a value"
           >
             <SelectValue placeholder="Select month" />
@@ -102,7 +103,7 @@ export function ChartSecondary() {
         <ChartContainer
           id={id}
           config={chartConfig}
-          className="mx-auto aspect-square w-full max-w-[300px]"
+          className="mx-auto aspect-square w-full max-w-[250px] sm:max-w-[300px]"
         >
           <PieChart>
             <ChartTooltip
@@ -113,7 +114,7 @@ export function ChartSecondary() {
               data={desktopData}
               dataKey="desktop"
               nameKey="month"
-              innerRadius={60}
+              innerRadius={50}
               strokeWidth={5}
               activeIndex={activeIndex}
               activeShape={({
@@ -121,11 +122,11 @@ export function ChartSecondary() {
                 ...props
               }: PieSectorDataItem) => (
                 <g>
-                  <Sector {...props} outerRadius={outerRadius + 10} />
+                  <Sector {...props} outerRadius={outerRadius + 8} />
                   <Sector
                     {...props}
-                    outerRadius={outerRadius + 25}
-                    innerRadius={outerRadius + 12}
+                    outerRadius={outerRadius + 20}
+                    innerRadius={outerRadius + 10}
                   />
                 </g>
               )}
@@ -143,14 +144,14 @@ export function ChartSecondary() {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
+                          className="fill-foreground text-xl sm:text-2xl lg:text-3xl font-bold"
                         >
                           {desktopData[activeIndex].desktop.toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
+                          y={(viewBox.cy || 0) + 20}
+                          className="fill-muted-foreground text-sm sm:text-base"
                         >
                           Visitors
                         </tspan>

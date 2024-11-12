@@ -20,13 +20,13 @@ export function Login() {
         </div>
       ) : (
         <div className="w-full min-h-screen flex items-center justify-around">
-          <div>
+          <div className="hidden md:block">
             <img src={loginImage} alt="" />
             <h1 className="text-blue-500 text-2xl mt-6 text-center">
               Expensive Control Application
             </h1>
           </div>
-          <div>
+          <div className="min-w-48 p-4 sm:p-0">
             <h1 className="text-blue-500 font-semibold text-2xl mb-9">
               Welcome Back!
             </h1>

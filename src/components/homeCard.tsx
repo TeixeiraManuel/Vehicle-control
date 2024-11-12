@@ -17,7 +17,7 @@ export function HomeCard({ icon, title, total, className }: homeCardProps) {
         </div>
         <h1>{title}</h1>
       </div>
-      <p className="lg:text-center text-end font-semibold text-xl pl-12">
+      <p className="xl:text-center text-end font-semibold text-xl pl-12">
         {total}
       </p>
     </div>

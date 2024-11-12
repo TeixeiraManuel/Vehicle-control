@@ -12,10 +12,14 @@ export function CarStateInformation({
 }: CarProps) {
   return (
     <div
-      className={`flex items-center justify-between m-6 shadow-[0_3px_8px_rgba(0,0,0,0.24)] bg-white rounded-md w-80  p-6 ${className} `}
+      className={`flex items-center justify-between m-6 shadow-[0_3px_8px_rgba(0,0,0,0.24)] bg-white rounded-md w-full lg:w-80  p-6 ${className} `}
     >
       <div>
-        <h1 className={`${className?.length > 0 ? "text-gray-700" : ""}`}>
+        <h1
+          className={`${
+            className && className.length > 0 ? "text-gray-700" : ""
+          }`}
+        >
           {title}
         </h1>
         <p className={description ? "text-green-500" : "text-red-500"}>

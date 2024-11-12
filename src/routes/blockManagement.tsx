@@ -16,33 +16,33 @@ export function BlockManagement() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="px-12"
+      className="px-4 lg:px-12 mt-8 h-[90vh] "
     >
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-3xl font-medium text-gray-700 mb-12"
+        className="text-3xl font-medium text-gray-700 mb-6"
       >
-        block-management
+        Block-management
       </motion.h1>
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-row items-start justify-between w-full gap-8"
+        className="flex lg:flex-row items-start flex-col justify-between w-full gap-8 h-full py-4 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 pb-44 hover:scrollbar-thumb-blue-500 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
       >
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-white rounded-md w-96 py-4 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 h-[44rem] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
+          className="bg-white rounded-md w-full lg:w-96 pl-2 pr-12 lg:px-12 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 h-5/6 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex text-gray-700 justify-between gap-2 bg-gray-100 m-6 w-80 rounded-md p-2"
+            className="flex text-gray-700 justify-between gap-2 bg-gray-100 m-6 w-full px-5 lg:w-80 rounded-md py-2"
           >
             <input
               className=" bg-gray-100 outline-none border-none flex-1"
@@ -56,7 +56,16 @@ export function BlockManagement() {
           <div>
             {[
               { title: "Toyota gxr", description: true, iconState: <Lock /> },
-              { title: "Toyota gxr", description: false, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
+              { title: "Toyota gxr", description: true, iconState: <Lock /> },
               { title: "Toyota gxr", description: true, iconState: <Lock /> },
               { title: "Toyota gxr", description: true, iconState: <Lock /> },
             ].map((item, index) => (
@@ -81,7 +90,7 @@ export function BlockManagement() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="w-3/4"
+          className="w-full lg:w-3/4 z-0 h-5/6"
         >
           {/*
           <motion.h1
@@ -97,7 +106,7 @@ export function BlockManagement() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="w-full p-2 flex-1 bg-white h-[40rem]"
+            className="w-full p-2 flex-1 bg-white h-full"
           >
             <Map />
             <motion.div

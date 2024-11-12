@@ -10,6 +10,8 @@ import {
   FileText,
   Settings,
   LogOut,
+  X,
+  Menu,
 } from "lucide-react";
 const menuItems = [
   { id: "home", icon: <Home />, label: "Home", route: "" },
@@ -40,6 +42,7 @@ const menuItems = [
   },
 ];
 export function SideBar() {
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   const location = useLocation();
   const [activeItem, setActiveItem] = useState(() => {
     // recuperar o estado do localStorage ou usa a rota atual
@@ -61,50 +64,80 @@ export function SideBar() {
 
   const handleItemClick = (itemId: string) => {
     setActiveItem(itemId);
+    setToggleMenu(false);
     localStorage.setItem("activeMenuItem", itemId);
   };
 
   return (
-    <div className="w-28 lg:w-96 h-screen px-6 lg:px-12 py-14 gap-12 flex flex-col">
-      <div className="flex items-center gap-2">
-        <img src={logo} alt="logo da vehicle control" />
-        <p className="font-bold text-xl opacity-0 lg:opacity-100">
-          ExpControlApp.
-        </p>
-      </div>
+    <>
+      {/* Mobile Menu Button */}
+      <button
+        className="fixed top-4 right-4 p-2 rounded-lg bg-white shadow-md lg:hidden z-50"
+        onClick={() => setToggleMenu(!toggleMenu)}
+      >
+        {toggleMenu ? (
+          <X className="w-6 h-6 text-gray-700" />
+        ) : (
+          <Menu className="w-6 h-6 text-gray-700" />
+        )}
+      </button>
 
-      <nav className="mt-12">
-        <ul className="flex flex-col gap-7">
-          {menuItems.map((item) => (
-            <Link
-              to={`/${item.route}`}
-              key={item.id}
-              className={`rounded-xl p-4 duration-200 cursor-pointer
+      {/* Sidebar Container */}
+      <div
+        className={`fixed lg:static h-screen bg-white transition-all duration-300 shadow-lg lg:shadow-none
+        ${toggleMenu ? "left-0" : "-left-full"} 
+        lg:left-0 w-64 lg:w-96 px-6 py-14 gap-12 flex flex-col z-40`}
+      >
+        {/* Logo Section */}
+        <div className="flex items-center gap-2 px-4">
+          <img src={logo} alt="logo da vehicle control" className="w-8 h-8" />
+          <p className="font-bold text-xl">ExpControlApp.</p>
+        </div>
+
+        {/* Navigation Menu */}
+        <nav className="mt-12">
+          <ul className="flex flex-col gap-7">
+            {menuItems.map((item) => (
+              <Link
+                to={`/${item.route}`}
+                key={item.id}
+                className={`rounded-xl p-4 duration-200 cursor-pointer
                 ${
                   activeItem === item.id ? "bg-blue-500" : "hover:bg-gray-100"
                 }`}
-              onClick={() => handleItemClick(item.id)}
-            >
-              <div
-                className={`flex items-center gap-6 font-medium 
-                  ${activeItem === item.id ? "text-white" : "text-gray-700"}`}
+                onClick={() => handleItemClick(item.id)}
               >
-                <p> {item.icon}</p>
-                <p className=" opacity-0 lg:opacity-100"> {item.label}</p>
-              </div>
-            </Link>
-          ))}
-        </ul>
-      </nav>
+                <div
+                  className={`flex items-center gap-6 font-medium 
+                  ${activeItem === item.id ? "text-white" : "text-gray-700"}`}
+                >
+                  {item.icon}
+                  <span className="lg:block">{item.label}</span>
+                </div>
+              </Link>
+            ))}
+          </ul>
+        </nav>
 
-      <div className="flex flex-1 p-4">
-        <Link
-          to="/login"
-          className="flex items-end gap-6 font-medium text-gray-700 hover:text-gray-900 "
-        >
-          <LogOut /> <p className=" opacity-0 lg:opacity-100"> Logout</p>
-        </Link>
+        {/* Logout Section */}
+        <div className="mt-auto p-4">
+          <Link
+            to="/login"
+            className="flex items-center gap-6 font-medium text-gray-700 hover:text-gray-900"
+          >
+            <LogOut />
+            <span className="lg:block">Logout</span>
+          </Link>
+        </div>
       </div>
-    </div>
+
+      {/* Overlay for mobile */}
+      {toggleMenu && (
+        <div
+          className="fixed inset-0 bg-black/20 lg:hidden z-30"
+          onClick={() => setToggleMenu(false)}
+        />
+      )}
+    </>
   );
 }
