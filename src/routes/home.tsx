@@ -12,7 +12,7 @@ export function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="px-12"
+      className="px-12 pb-28  h-screen gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
     >
       <motion.h1
         initial={{ y: 20, opacity: 0 }}
@@ -27,7 +27,7 @@ export function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="my-6 flex bg-white justify-between px-12 py-6"
+        className="my-6 flex bg-white justify-between flex-col lg:flex-row px-6 py-6"
       >
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -85,7 +85,7 @@ export function Home() {
           />
         </motion.div>
       </motion.div>
-      <div className="flex gap-12">
+      <div className="flex gap-12 flex-col lg:flex-row">
         <ChartPrimary />
         <ChartSecondary />
       </div>
@@ -93,9 +93,9 @@ export function Home() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="bg-white w-full h-56 mt-12 flex p-6 gap-4"
+        className="bg-white w-full h-56 mt-12 flex p-6 gap-4 flex-col lg:flex-row"
       >
-        <div className="w-2/4 space-y-4 px-4  h-44 gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full">
+        <div className="lg:w-2/4 space-y-4 px-4  h-44 gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full">
           <h1 className="font-semibold">News Notifications</h1>
           {[1, 2, 3].map((index) => (
             <motion.div
@@ -112,7 +112,7 @@ export function Home() {
           ))}
         </div>
         <Separator />
-        <div className="w-2/4 space-y-4 px-4  h-44 gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar-thumb]:rounded-full [&:-.scrollbar-track]:rounded-full">
+        <div className="lg:w-2/4 space-y-4 px-4  h-44 gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar-thumb]:rounded-full [&:-.scrollbar-track]:rounded-full">
           <h1 className="font-semibold">News Reports</h1>
           {Array.from({ length: 12 }).map((_, index) => (
             <motion.div

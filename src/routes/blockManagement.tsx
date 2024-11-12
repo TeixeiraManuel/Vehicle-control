@@ -83,6 +83,7 @@ export function BlockManagement() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="w-3/4"
         >
+          {/*
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,11 +92,12 @@ export function BlockManagement() {
           >
             Maps
           </motion.h1>
+            */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="w-full p-2 flex-1 bg-white h-[38rem]"
+            className="w-full p-2 flex-1 bg-white h-[40rem]"
           >
             <Map />
             <motion.div
@@ -112,18 +114,6 @@ export function BlockManagement() {
                 <p>
                   gasóleo <span className=" text-gray-700"> 20l</span>
                 </p>
-              </div>
-              <div className="flex items-center w-full ">
-                <div className="flex items-center w-full justify-between">
-                  <p>
-                    longitude:<span className="text-gray-700">999</span>
-                  </p>
-                  <div className="flex items-center justify-center flex-1">
-                    <p>
-                      gasóleo <span className="text-gray-700"> 20l</span>
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </motion.div>

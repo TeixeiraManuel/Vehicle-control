@@ -17,7 +17,7 @@ interface MapContainerPropsProps extends MapContainerProps {
 export function Map() {
   const mapContainerProps: MapContainerPropsProps = {
     center: [38.9637, 35.2433],
-    zoom: 10,
+    zoom: 16,
     scrollWheelZoom: false,
     style: {
       height: "90%",

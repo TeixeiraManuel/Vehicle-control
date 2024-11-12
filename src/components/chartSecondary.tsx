@@ -56,7 +56,7 @@ export function ChartSecondary() {
   const months = React.useMemo(() => desktopData.map((item) => item.state), []);
 
   return (
-    <Card data-chart={id} className="flex flex-col w-2/6">
+    <Card data-chart={id} className="flex flex-col lg:w-2/6">
       <ChartStyle id={id} config={chartConfig} />
       <CardHeader className="flex-row items-start space-y-0 pb-0">
         <div className="grid gap-12">

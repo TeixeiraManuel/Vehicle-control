@@ -34,7 +34,7 @@ export function Monitoring() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-white rounded-md w-96 py-4 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 h-[44rem] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
+          className="bg-white rounded-md max-w-96 py-4 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 h-[44rem] [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -80,6 +80,7 @@ export function Monitoring() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="w-3/4"
         >
+          {/*
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -88,18 +89,19 @@ export function Monitoring() {
           >
             Maps
           </motion.h1>
+            */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="w-full p-2 flex-1 bg-white h-[38rem]"
+            className="w-full p-2 flex-1 bg-white h-[42rem]"
           >
             <Map />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="shadow-[0_3px_8px_rgba(0,0,0,0.24)] p-4 space-y-6"
+              className="shadow-[0_3px_8px_rgba(0,0,0,0.24)]"
             >
               <div className="flex justify-between items-center ">
                 <p className="text-green-500">Toyota gxr</p>

@@ -35,7 +35,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 export function ChartPrimary() {
   return (
-    <Card className="w-9/12 h-[22rem]">
+    <Card className="lg:w-9/12 h-[22rem]">
       <ChartContainer config={chartConfig}>
         <CardContent className="p-6">
           <div className="h-80 w-full">

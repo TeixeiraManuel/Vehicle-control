@@ -50,7 +50,7 @@ export function Vehicle() {
       </motion.div>
       <div className="bg-white px-16 py-9">
         <motion.div
-          className="mt-8  h-[36rem] gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 overflow-y-auto overflow-x-hidden pt-3 grid grid-cols-5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
+          className="mt-8  h-[36rem] gap-4 scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-gray-200 hover:scrollbar-thumb-blue-500 overflow-y-auto overflow-x-hidden pt-3 grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}

@@ -45,13 +45,13 @@ export function SideBar() {
     // recuperar o estado do localStorage ou usa a rota atual
 
     const savedItem = localStorage.getItem("activeMenuItem");
-    const currentPath = location.pathname.slice(1) || "home";
+    const currentPath = location.pathname.slice(1) || "";
     return savedItem || currentPath;
   });
 
   // Atualiza o activeItem baseado na rota atual
   useEffect(() => {
-    const currentPath = location.pathname.slice(1) || "home";
+    const currentPath = location.pathname.slice(1) || "";
     const menuItem = menuItems.find((item) => item.route === currentPath);
     if (menuItem) {
       setActiveItem(menuItem.id);
@@ -65,10 +65,12 @@ export function SideBar() {
   };
 
   return (
-    <div className="w-96 h-screen px-12 py-14 gap-12 flex flex-col">
+    <div className="w-28 lg:w-96 h-screen px-6 lg:px-12 py-14 gap-12 flex flex-col">
       <div className="flex items-center gap-2">
         <img src={logo} alt="logo da vehicle control" />
-        <p className="font-bold text-xl">ExpControlApp.</p>
+        <p className="font-bold text-xl opacity-0 lg:opacity-100">
+          ExpControlApp.
+        </p>
       </div>
 
       <nav className="mt-12">
@@ -83,12 +85,13 @@ export function SideBar() {
                 }`}
               onClick={() => handleItemClick(item.id)}
             >
-              <p
+              <div
                 className={`flex items-center gap-6 font-medium 
                   ${activeItem === item.id ? "text-white" : "text-gray-700"}`}
               >
-                {item.icon} {item.label}
-              </p>
+                <p> {item.icon}</p>
+                <p className=" opacity-0 lg:opacity-100"> {item.label}</p>
+              </div>
             </Link>
           ))}
         </ul>
@@ -96,10 +99,10 @@ export function SideBar() {
 
       <div className="flex flex-1 p-4">
         <Link
-          to=""
+          to="/login"
           className="flex items-end gap-6 font-medium text-gray-700 hover:text-gray-900 "
         >
-          <LogOut /> Logout
+          <LogOut /> <p className=" opacity-0 lg:opacity-100"> Logout</p>
         </Link>
       </div>
     </div>
