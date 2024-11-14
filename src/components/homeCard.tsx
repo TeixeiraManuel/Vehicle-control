@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import CountUp from "react-countup";
+
 interface homeCardProps {
   icon: ReactNode;
   title: string;
@@ -18,7 +20,7 @@ export function HomeCard({ icon, title, total, className }: homeCardProps) {
         <h1>{title}</h1>
       </div>
       <p className="xl:text-center text-end font-semibold text-xl pl-12">
-        {total}
+        <CountUp start={0} duration={5} end={total} />
       </p>
     </div>
   );
